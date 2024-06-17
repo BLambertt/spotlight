@@ -30,7 +30,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and tag Docker image
-        run: docker build . -t ghcr.io/blambertt/spotlight-api:latest
+        run: docker build . -t ghcr.io/blambertt/spotlight/spotlight-api:latest
 
       - name: Push Docker image to GitHub Container Registry
-        run: docker push ghcr.io/blambertt/spotlight-api:latest
+        run: docker push ghcr.io/blambertt/spotlight/spotlight-api:latest
