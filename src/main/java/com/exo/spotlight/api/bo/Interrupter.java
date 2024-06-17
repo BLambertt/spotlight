@@ -2,10 +2,12 @@ package com.exo.spotlight.api.bo;
 
 
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Set;
 
 @Entity
+@Table
+
 public class Interrupter {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
