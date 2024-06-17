@@ -32,6 +32,14 @@ jobs:
 
       - name: Build and tag Docker image
         run: docker build -t ghcr.io/blambertt/spotlight/spotlight-api:latest .
-
       - name: Push Docker image to GitHub Container Registry
         run: docker push ghcr.io/blambertt/spotlight/spotlight-api:latest
+
+  
+  deploy-to-render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger image to render.com
+        run: https://api.render.com/deploy/srv-cpo3tceehbks738h42k0?key=jEPh2iUX4CY
+
+      
