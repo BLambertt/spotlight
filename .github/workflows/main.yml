@@ -43,6 +43,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger image to render.com
-        run: https://api.render.com/deploy/srv-cpo3tceehbks738h42k0?key=jEPh2iUX4CY
+        run: curl https://api.render.com/deploy/srv-cpo3tceehbks738h42k0?key=jEPh2iUX4CY
 
       
