@@ -2,6 +2,7 @@ package com.exo.spotlight.api.bo;
 
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import java.util.Set;
 
@@ -15,6 +16,7 @@ public class Interrupter {
     private String name;
 
     @ManyToMany(mappedBy = "interrupters")
+    @JsonBackReference
     private Set<Light> lights;
 
     // Getters and setters

@@ -2,6 +2,8 @@ package com.exo.spotlight.api.bo;
 
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import java.util.Set;
 
@@ -17,6 +19,7 @@ public class Light {
 
     @ManyToOne
     @JoinColumn(name = "room_id")
+    @JsonBackReference
     private Room room;
 
     @ManyToMany
@@ -25,6 +28,7 @@ public class Light {
             joinColumns = @JoinColumn(name = "light_id"),
             inverseJoinColumns = @JoinColumn(name = "interrupter_id")
     )
+    @JsonManagedReference
     private Set<Interrupter> interrupters;
 
     // Getters and setters

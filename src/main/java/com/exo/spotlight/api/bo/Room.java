@@ -2,6 +2,7 @@ package com.exo.spotlight.api.bo;
 
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import java.util.Set;
 
@@ -20,6 +21,7 @@ public class Room {
     private Accommodation accommodation;
 
     @OneToMany(mappedBy = "room", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference
     private Set<Light> lights;
 
     // Getters and setters
