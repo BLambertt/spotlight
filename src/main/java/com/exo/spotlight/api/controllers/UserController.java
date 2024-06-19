@@ -1,12 +1,15 @@
 package com.exo.spotlight.api.controllers;
 
 
+import com.exo.spotlight.api.bo.Accommodation;
 import com.exo.spotlight.api.bo.User;
+import com.exo.spotlight.api.repository.AccommodationRepository;
 import com.exo.spotlight.api.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -57,5 +60,13 @@ public class UserController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @Autowired
+    private AccommodationRepository accommodationRepository;
+
+    @GetMapping("/{id}/accommodations")
+    public List<Accommodation> getUserAccommodations(@PathVariable Long id) {
+        return accommodationRepository.findByUserId(id);
     }
 }
