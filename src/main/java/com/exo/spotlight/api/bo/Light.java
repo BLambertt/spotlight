@@ -28,7 +28,7 @@ public class Light {
             joinColumns = @JoinColumn(name = "light_id"),
             inverseJoinColumns = @JoinColumn(name = "interrupter_id")
     )
-    @JsonManagedReference("light-interrupter")
+    @JsonManagedReference
     private Set<Interrupter> interrupters;
 
     // Getters and setters

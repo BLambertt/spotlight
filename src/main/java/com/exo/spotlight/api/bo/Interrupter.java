@@ -16,7 +16,7 @@ public class Interrupter {
     private String name;
 
     @ManyToMany(mappedBy = "interrupters")
-    @JsonBackReference("light-interrupter")
+    @JsonBackReference
     private Set<Light> lights;
 
     // Getters and setters
