@@ -1,6 +1,7 @@
 package com.exo.spotlight.api.bo;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import java.util.Set;
 
@@ -15,6 +16,7 @@ public class Room {
 
     @ManyToOne
     @JoinColumn(name = "accommodation_id")
+    @JsonBackReference
     private Accommodation accommodation;
 
     @OneToMany(mappedBy = "room", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
