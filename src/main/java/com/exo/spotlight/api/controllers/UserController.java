@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/users")
+@CrossOrigin(origins = "https://spotlight-back.vercel.app")
 public class UserController {
 
     @Autowired

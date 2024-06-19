@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/interrupters")
+@CrossOrigin(origins = "https://spotlight-back.vercel.app")
 public class InterrupterController {
 
     @Autowired
